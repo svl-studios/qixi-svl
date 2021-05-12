@@ -1,16 +1,22 @@
-/* global jQuery */
+/* global jQuery, svlOptions */
 
 ( function( $ ) {
 	var adjustWrap;
+	var pageID;
 
 	function loadDemos() {
 		var div;
+		var theme;
+		var wrap = $( '.svl-demo-select-wrap' );
 
-		$( '.svl-demo-select-wrap' ).removeClass( 'init-onload' );
+		wrap.removeClass( 'init-onload' );
+
+		theme = wrap.data( 'theme' );
+		pageID = wrap.data( 'id' );
 
 		div = $( '<div>' );
 		div.load(
-			'http://127.0.0.1/demo-toggle/ .svl-demos',
+			svlOptions.baseURL + '/ .svl-demos',
 			function() {
 				var demoWrap = div.find( '.demo-wrap' );
 
@@ -30,7 +36,7 @@
 								var url   = $( this ).find( '.title-link' ).attr( 'href' );
 								var title = $( this ).find( '.title-link h4' ).text();
 
-								if ( '' !== title && $( '.svl-demo-window ul' ).append( '<li><a title="Qixi ' + title + ' Demo" href="' + url + '" target=_blank><img src="' + img + '" alt="Qixi ' + title + ' Demo"></a></li>' ) ) {
+								if ( '' !== title && $( '.svl-demo-window ul' ).append( '<li><a title="' + theme + ' ' + title + ' Demo" href="' + url + '" target=_blank><img src="' + img + '" alt="Qixi ' + title + ' Demo"></a></li>' ) ) {
 									count++;
 								}
 							}
@@ -82,7 +88,7 @@
 	$( window ).on(
 		'load',
 		function() {
-			if ( $( 'body' ).hasClass( 'page-id-2' ) ) {
+			if ( $( 'body' ).hasClass( 'page-id-' + pageID ) ) {
 				$( '.svl-demos' ).randomizeDemos( '.demo-block' );
 				$( '.svl-demos' ).css( { visibility: 'visible' } );
 				setInterval(

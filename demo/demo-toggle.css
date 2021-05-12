@@ -36,7 +36,12 @@
     text-align: center;
     width: 100%;
     color: #fff !important;
-    display: block
+    display: block;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
 }
 
 .svl-demo-select-wrap .buy-now-btn a:hover {
@@ -59,7 +64,12 @@
     padding: 5px;
     width: 50%;
     overflow: hidden;
-    float: left
+    float: left;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
 }
 
 .svl-demo-window ul li:hover {
@@ -82,7 +92,12 @@
     top: 37%;
     vertical-align: middle;
     width: 60px;
-    cursor: pointer
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
 }
 
 .svl-demo-toggle:hover {
@@ -146,7 +161,12 @@
     background-color: #fff;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.19);
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
 }
 
 .demo-wrap .title-link {
@@ -193,7 +213,12 @@
     left: 0;
     top: -45px;
     background-color: #2b2b2b;
-    opacity: 0
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
 }
 
 .demo-wrap .svl-button {

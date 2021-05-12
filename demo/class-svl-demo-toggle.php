@@ -1,11 +1,11 @@
 <?php
 
-if ( ! class_exists( 'Qixi_Demo_Toggle' ) ) {
-	class Qixi_Demo_Toggle {
+if ( ! class_exists( 'Svl_Demo_Toggle' ) ) {
+	class Svl_Demo_Toggle {
 		public function __construct() {
-			add_action( 'qixi_after_page_content', array( $this, 'add_demo_toggle' ) );
+			// add_action( 'wp_footer', array( $this, 'add_demo_toggle' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
-			add_shortcode( 'svl_demos', array( $this, 'shortcode' ) );
+			// add_shortcode( 'svl_demos', array( $this, 'shortcode' ) );
 		}
 
 		public function shortcode( $atts = '', $content = null ) {
@@ -65,11 +65,19 @@ if ( ! class_exists( 'Qixi_Demo_Toggle' ) ) {
 
 		public function add_demo_toggle() {
 			?>
-			<div class="svl-demo-select-wrap init-onload"><span href="#" class="svl-demo-toggle"> <i class="fa fa-plus"></i> DEMOS </span>
+			<div class="svl-demo-select-wrap init-onload">
+				<span href="#" class="svl-demo-toggle">
+					<i class="fa fa-plus"></i> DEMOS
+				</span>
 				<div class="svl-demos-info-box">
-					<div class="buy-now-btn"><a href=""> Purchase Qixi </a></div>
-					<span class="demos-count"></span> <span class="svl-more-demos-text"> Loading Demos </span></div>
-				<div class="svl-demo-window"><i class="loading-demos fa fa-spin fa-refresh"></i>
+					<div class="buy-now-btn">
+						<a href=""> Purchase Qixi </a>
+					</div>
+					<span class="demos-count"></span>
+					<span class="svl-more-demos-text"> Loading Demos </span>
+				</div>
+				<div class="svl-demo-window">
+					<i class="loading-demos fa fa-spin fa-refresh"></i>
 					<ul style="height: 376px;"></ul>
 				</div>
 			</div>
@@ -77,11 +85,30 @@ if ( ! class_exists( 'Qixi_Demo_Toggle' ) ) {
 		}
 
 		public function enqueue() {
-			wp_enqueue_style( 'svl-demo-toggle', get_stylesheet_directory_uri() . '/demo/demo-toggle.css', array(), '1.0.0' );
+			wp_enqueue_style(
+				'svl-demo-toggle',
+				get_stylesheet_directory_uri() . '/demo/demo-toggle.css',
+				array(),
+				'1.0.0'
+			);
 
-			wp_enqueue_script( 'svl-demo-toggle', get_stylesheet_directory_uri() . '/demo/demo-toggle.js', array(), '1.0.0', true );
+			wp_enqueue_script(
+				'svl-demo-toggle',
+				get_stylesheet_directory_uri() . '/demo/demo-toggle.js',
+				array(),
+				'1.0.0',
+				true
+			);
+
+			wp_localize_script(
+				'svl-demo-toggle',
+				'svlOptions',
+				array(
+					'baseURL' => home_url(),
+				)
+			);
 		}
 	}
 
-	new Qixi_Demo_Toggle();
+	new Svl_Demo_Toggle();
 }
