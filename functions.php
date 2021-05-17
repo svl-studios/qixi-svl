@@ -34,9 +34,9 @@ add_action( 'wp_enqueue_scripts', 'svl_childtheme_style' );
  */
 function svl_setup() {
 	require_once get_stylesheet_directory() . '/admin/class-qixi-functions.php';
-	require_once get_stylesheet_directory() . '/demo/class-svl-demo-toggle.php';
-	require_once get_stylesheet_directory() . '/demo/class-svl-demos.php';
-	require_once get_stylesheet_directory() . '/demo/class-svl-demo.php';
+	// require_once get_stylesheet_directory() . '/demo/class-svl-demo-toggle.php';
+	// require_once get_stylesheet_directory() . '/demo/class-svl-demos.php';
+	// require_once get_stylesheet_directory() . '/demo/class-svl-demo.php';
 }
 
 add_action( 'after_setup_theme', 'svl_setup', 9 );
